@@ -6,8 +6,6 @@ def view_contacts():
     #4 - Waine Smith
     ch2 = int(input('Enter contact number or 0 to exit to the main menu: '))
 
-def add_new_contact():
-    print(2)
     #Bob Jones
     #Primary phone: +4915123123151
     #Phone 2: +1142312312312
@@ -47,9 +45,18 @@ def add_new_contact():
     #1 - view contacts
     #2 - add new contact
     #3 - exit the application
+
     #Your choice: 2
-    #Enter name: Mike Evans
-    #Enter primary phone: +44123123123
+def add_new_contact():
+    name = input('Enter name: ')
+    primary_phone = input('Enter primary phone: ')
+    additional_phones = []
+
+    while True:
+        aph = input('Enter additional phone or empty: ')
+        if aph == '': break
+        additional_phones.append(aph)
+        
     #Enter additional phone or empty: +44298009123
     #Enter additional phone or empty:
     #Select one of the following additional fields (e-mail, vk,
