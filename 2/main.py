@@ -6,53 +6,42 @@ def view_contacts():
     for contact in book:
         i += 1
         print(i," ",contact['name'])
-    #1 - Andrew Warrick
-    #2 - Bob Jones
-    #3 - Claire Mitchell
-    #4 - Waine Smith
-    #ch2 = int(input('Enter contact number or 0 to exit to the main menu: '))
+
+    num = int(input('Enter contact number or 0 to exit to the main menu: '))
+    if num == 0: return
+    #for cont in book[num-1]:
+    #    print(cont, ": ", book[num-1][cont])
 
     #Bob Jones
+    print(book[num-1]['name'])
+
     #Primary phone: +4915123123151
+    print("Primary phone: "book[num-1]['primary_phone'])
+
     #Phone 2: +1142312312312
     #Phone 3: +1312312312312
     #E-mail: b.jones@hotmail.com
     #Telegram: @bob123
-    #Choose an option:
-    #1 - Delete contact
-    #2 - Go back to the contacts list
-    #Your choice: 2
-    #Your contacts:
-    #1 - Andrew Warrick
-    #2 - Bob Jones
-    #3 - Claire Mitchell
-    #4 - Waine Smith
-    #Enter contact number or 0 to exit to the main menu:
-    #Your choice: 4
-    #Waine Smith
-    #Primary phone: +491232123123
-    #E-mail: waine789@gmail.com
-    #Choose an option:
-    #1 - Delete contact
-    #2 - Go back to the contacts list
-    #Your choice: 1
-    #Are you sure you want to delete Waine Smith from your contact
-    #list (y/n)? y
-    #Waine Smith successfully deleted from the contact book. Press any
-    #key to return to the contact list
-    #continues on the next page...
-    #Your contacts:
-    #1 - Andrew Warrick
-    #2 - Bob Jones
-    #3 - Claire Mitchell
-    #Enter contact number or 0 to exit to the main menu:
-    #Your choice: 0
-    #Choose an option:
-    #1 - view contacts
-    #2 - add new contact
-    #3 - exit the application
 
-    #Your choice: 2
+
+    print('Choose an option:')
+
+
+    print('1 - Delete contact')
+    print('2 - Go back to the contacts list')
+    ch2 = int(input('Your choice: '))
+
+    if ch2 ==2 : 
+        view_contacts()
+
+    if ch2 ==1 : 
+        ch3 = input('Are you sure you want to delete Waine Smith from your contact list (y/n)? ')
+        if ch3 == 'y':
+            book.pop(num-1)
+            print('Waine Smith successfully deleted from the contact book.')
+            input('Press Enter to return to the contact list')
+            view_contacts()
+
 def add_new_contact():
     contact = {}
     contact['name'] = input('Enter name: ')
@@ -88,8 +77,6 @@ book = []
 f=open('book.txt', 'r')
 book=json.loads(f.read())
 f.close()
-
-print(book)
 
 while(True):
     print('Choose an option:')
