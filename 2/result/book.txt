@@ -1,0 +1,1 @@
+[{"name": "qqq", "primary_phone": "www", "additional_phones": ["eee", "rrr"], "e-mail": "ttt", "vk": "yyy"}, {"name": "aaa", "primary_phone": "sss", "additional_phones": ["ddd", "fff", "ggg"], "linkedin": "bbb", "telegram": "nnn"}]
