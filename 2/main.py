@@ -16,13 +16,20 @@ def view_contacts():
     print(book[num-1]['name'])
 
     #Primary phone: +4915123123151
-    print("Primary phone: "book[num-1]['primary_phone'])
+    print("Primary phone: ", book[num-1]['primary_phone'])
 
     #Phone 2: +1142312312312
     #Phone 3: +1312312312312
+    i = 2
+    for ph in book[num-1]['additional_phones']:
+        print("Phone ", i , ": ", ph )
+        i+=1
+
     #E-mail: b.jones@hotmail.com
     #Telegram: @bob123
-
+    for data in book[num-1]:
+        if data in ['e-mail', 'vk', 'instagram', 'linkedin', 'telegram']:
+            print(data, ": ", book[num-1][data])
 
     print('Choose an option:')
 
