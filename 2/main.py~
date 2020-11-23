@@ -5,7 +5,7 @@ def view_contacts():
     i = 0
     for contact in book:
         i += 1
-        print(i," ",contact['name'])
+        print("%d %s" % i%contact['name'])
     #1 - Andrew Warrick
     #2 - Bob Jones
     #3 - Claire Mitchell
